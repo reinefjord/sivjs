@@ -1,0 +1,37 @@
+#sivjs {
+    text-align: center;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 56.25vw;
+    max-height: 400px;
+}
+
+#siv-prev, #siv-next {
+    position: absolute;
+    top: 50%;
+}
+#siv-prev {
+    left: 20px;
+}
+#siv-next {
+    right: 20px;
+}
+
+.siv {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.siv-active {
+    display: inline-block;
+}
+
+.siv-hidden {
+    display: none;
+}
+
