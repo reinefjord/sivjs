@@ -1,35 +1,17 @@
-function nextImage(container, items) {
-    var active = container.getElementsByClassName('siv-active')[0];
-    var active_index = [].slice.call(items).indexOf(active);
-    var next_index = ++active_index;
-
-    active.classList.remove('siv-active');
-    active.classList.add('siv-hidden');
-
-    if (next_index >= items.length) {
-        next_index = 0;
-    }
-
-    var new_active = items[next_index];
-
-    new_active.classList.remove('siv-hidden');
-    new_active.classList.add('siv-active');
+// Javascript can't even modulo correct
+Number.prototype.mod = function(n) {
+    return ((this%n)+n)%n;
 }
 
-function prevImage(container, items) {
+function stepImage(container, items, steps) {
     var active = container.getElementsByClassName('siv-active')[0];
     var active_index = [].slice.call(items).indexOf(active);
-    var next_index = --active_index;
+    var next_index = (active_index + steps).mod(items.length);
 
     active.classList.remove('siv-active');
     active.classList.add('siv-hidden');
 
-    if (next_index < 0) {
-        next_index = items.length - 1;
-    }
-
     var new_active = items[next_index];
-
     new_active.classList.remove('siv-hidden');
     new_active.classList.add('siv-active');
 }
@@ -52,8 +34,8 @@ function init(container) {
     nextButton.innerHTML = 'Next';
     prevButton.innerHTML = 'Previous';
 
-    nextButton.addEventListener('click', function () { nextImage(container, items) });
-    prevButton.addEventListener('click', function () { prevImage(container, items) });
+    nextButton.addEventListener('click', function () { stepImage(container, items, 1) });
+    prevButton.addEventListener('click', function () { stepImage(container, items, -1) });
 
     container.appendChild(prevButton);
     container.appendChild(nextButton);
