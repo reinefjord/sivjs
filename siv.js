@@ -1,12 +1,12 @@
 // Javascript can't even modulo correct
-Number.prototype.mod = function(n) {
-    return ((this%n)+n)%n;
+function mmod(n, m) {
+    return ((n % m) + m) % m;
 }
 
 function stepImage(container, items, steps) {
     var active = container.getElementsByClassName('siv-active')[0];
     var active_index = [].slice.call(items).indexOf(active);
-    var next_index = (active_index + steps).mod(items.length);
+    var next_index = mmod(active_index + steps, items.length);
 
     active.classList.remove('siv-active');
     active.classList.add('siv-hidden');
