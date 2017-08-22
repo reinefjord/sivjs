@@ -18,17 +18,17 @@ function stepImage(container, items, steps) {
 
 function wrap(element, ratio) {
   var wrapper = document.createElement('div');
-  wrapper.setAttribute('id', 'sivjs-wrapper')
+  wrapper.setAttribute('class', 'sivjs-wrapper')
   wrapper.style.paddingBottom = 1/ratio*100 + "%";
-  element.parentNode.appendChild(wrapper);
+  element.parentNode.insertBefore(wrapper, element);
   wrapper.appendChild(element);
 }
 
-function init(container, ratio) {
-  var container = document.getElementById(container);
+function init(id, ratio) {
+  var container = document.getElementById(id);
 
   wrap(container, ratio);
-  container.style.position = 'absolute';
+  container.classList.add('sivjs');
 
   var items = container.getElementsByTagName('img');
 
