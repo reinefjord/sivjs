@@ -13,14 +13,14 @@
     align-items: center;
 }
 
-#siv-prev, #siv-next {
+.siv-prev, .siv-next {
     position: absolute;
     top: 50%;
 }
-#siv-prev {
+.siv-prev {
     left: 20px;
 }
-#siv-next {
+.siv-next {
     right: 20px;
 }
 

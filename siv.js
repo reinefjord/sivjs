@@ -40,9 +40,9 @@ function init(id, ratio) {
   }
 
   var nextButton = document.createElement('button');
-  nextButton.id = 'siv-next';
+  nextButton.classList.add('siv-next');
   var prevButton = document.createElement('button');
-  prevButton.id = 'siv-prev';
+  prevButton.classList.add('siv-prev');
 
   nextButton.innerHTML = 'Next';
   prevButton.innerHTML = 'Previous';
