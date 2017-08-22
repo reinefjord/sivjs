@@ -7,7 +7,7 @@ the viewer to have (e.g. `16/9`) to the init function. The viewer will expand
 to 100% width.
 
 ```html
-<link rel="stylesheet" href="sivjs.css">
+<link rel="stylesheet" href="siv.css">
 
 <div id="container">
   <img src="image1.jpg">
