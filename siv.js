@@ -28,6 +28,7 @@ function init(container, ratio) {
   var container = document.getElementById(container);
 
   wrap(container, ratio);
+  container.style.position = 'absolute';
 
   var items = container.getElementsByTagName('img');
 
